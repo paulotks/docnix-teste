@@ -10,7 +10,4 @@ import { FooterComponent } from './components/footer/footer.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
-  title = 'docnix-teste';
-  buleanozim: boolean = false;
-}
+export class AppComponent {}
