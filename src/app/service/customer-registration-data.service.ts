@@ -61,4 +61,6 @@ export class CustomerRegistrationDataService {
   getPaymentData(): PaymentData {
     return this.registrationData.payment;
   }
+
+  //falta injetar nos componentes
 }
