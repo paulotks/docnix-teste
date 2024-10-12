@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-addres',
   standalone: true,
   imports: [],
-  templateUrl: './addres.component.html',
-  styleUrl: './addres.component.scss'
+  templateUrl: './address.component.html',
+  styleUrl: './address.component.scss'
 })
 export class AddresComponent {
 
