@@ -7,7 +7,7 @@ import { MenuItem, MessageService } from 'primeng/api';
   templateUrl: './customer-registration.component.html',
   standalone: true,
   imports: [StepsModule],
-  styleUrls: ['./customer-registration.component.css'],
+  styleUrls: ['./customer-registration.component.scss'],
 })
 export class CustomerRegistrationComponent implements OnInit {
   items!: MenuItem[];

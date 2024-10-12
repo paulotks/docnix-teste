@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './header.component.html',
   standalone: true,
   imports: [NgOptimizedImage],
-  styleUrls: ['./header.component.css'],
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
   constructor() {}

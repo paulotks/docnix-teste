@@ -8,12 +8,16 @@ import {
   Validators,
 } from '@angular/forms';
 
+function Nome() {
+
+}
+
 @Component({
   selector: 'app-personal',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './personal.component.html',
-  styleUrl: './personal.component.css',
+  styleUrl: './personal.component.scss',
 })
 export class PersonalComponent implements OnInit {
   personalData: PersonalData = {
@@ -36,5 +40,9 @@ export class PersonalComponent implements OnInit {
 
   savePersonalData() {
     this.registrationService.setPersonalData(this.personalData);
+  }
+
+  teste() {
+    window.alert('PIPOCA')
   }
 }
