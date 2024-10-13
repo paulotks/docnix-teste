@@ -1,2 +1,11 @@
-<p>personal works!</p>
-<button (click)="teste()" >Butão do pipoca</button>
+<div class="p-float">
+    <form [formGroup]="personalForm" (ngSubmit)="savePersonalData()">
+        <app-input label="Nome" formControlName="name"/>
+        <app-input label="Sobrenome" formControlName="surname"/>
+        <app-input label="CPF" formControlName="cpf"/>
+        <app-input label="Data de nascimento" formControlName="birthDate"/>  <!-- criar componente novo de calendario -->
+        <app-input label="Telefone" formControlName="phone"/>
+        <app-input label="E-mail" formControlName="email"/>
+        <button (click)="printForm()">Printa o form</button>
+    </form>
+</div>

@@ -1,0 +1,9 @@
+.container-input {
+    display: flex;
+    flex-direction: column;
+    
+
+    label, input, small {
+        margin-top: 0.5em;
+    }
+}

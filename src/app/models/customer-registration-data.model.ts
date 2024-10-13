@@ -20,7 +20,7 @@ export interface PaymentData {
   method: string;
   cardNumber: string;
   nameOnCard: string;
-  expiry: string;
+  expiryDate: string;
   cvc: string;
 }
 

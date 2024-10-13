@@ -1,0 +1,15 @@
+<div class="container-input">
+    <label for="username">{{ label() }}</label>
+    <input 
+        pInputText 
+        id="username" 
+        aria-describedby="username-help"
+        [(ngModel)]="inputValue"
+        (focus)="onTouched && onTouched()"
+        (input)="onChange && onChange(inputValue)"
+        [disabled]="isDisabled"
+    />
+    <small id="username-help">
+        Enter your username to reset your password.
+    </small>
+</div>

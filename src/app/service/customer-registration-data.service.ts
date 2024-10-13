@@ -33,7 +33,7 @@ export class CustomerRegistrationDataService {
       method: '',
       cardNumber: '',
       nameOnCard: '',
-      expiry: '',
+      expiryDate: '',
       cvc: '',
     },
   };
