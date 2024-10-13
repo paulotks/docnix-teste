@@ -4,40 +4,41 @@ import { CalendarModule } from 'primeng/calendar';
 
 
 @Component({
-  selector: 'app-input-calender',
-  standalone: true,
-  imports: [CalendarModule, FormsModule],
-  templateUrl: './input-calender.component.html',
-  styleUrl: './input-calender.component.scss'
+    selector: 'app-input-calender',
+    standalone: true,
+    imports: [CalendarModule, FormsModule],
+    templateUrl: './input-calender.component.html',
+    styleUrl: './input-calender.component.scss'
 })
 export class InputCalenderComponent implements ControlValueAccessor {
-  label = input.required();
-  
-  //setup
-  private ngControl = inject(NgControl, { optional: true});
-  protected value = '';
-  protected onTouched?: () => {}
-  protected onChange?: (value: string) => {}
-  protected isDisabled: boolean = false
+    label = input.required();
 
-  constructor() {
-      if (this.ngControl) {
-          this.ngControl.valueAccessor = this;
-      }
-  }
+    //setup
+    private ngControl = inject(NgControl, { optional: true });
+    protected value = '';
+    protected onTouched?: () => {}
+    protected onChange?: (value: string) => {}
+    protected isDisabled: boolean = false
 
-  writeValue(obj: string): void {
-      this.value = obj;
-  }
-  registerOnChange(fn: any): void {
-      this.onChange = fn
-  }
-  registerOnTouched(fn: any): void {
-      this.onTouched = fn;
-  }
-  setDisabledState?(isDisabled: boolean): void {
-      this.isDisabled = isDisabled;
-  }
+    constructor() {
+        if (this.ngControl) {
+            this.ngControl.valueAccessor = this;
+        }
+    }
+
+    writeValue(obj: string): void {
+        this.value = obj;
+    }
+    registerOnChange(fn: any): void {
+        console.log(this.value);
+        this.onChange = fn;
+    }
+    registerOnTouched(fn: any): void {
+        this.onTouched = fn;
+    }
+    setDisabledState?(isDisabled: boolean): void {
+        this.isDisabled = isDisabled;
+    }
 
 
 }

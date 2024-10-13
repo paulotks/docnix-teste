@@ -56,7 +56,8 @@ export class PersonalComponent implements OnInit {
 
   navigateToNextStep() {
     this.savePersonalData()
-    this.router.navigate(['register/address'])
+    console.log(this.personalForm)
+    // this.router.navigate(['register/address'])
 
   }
 

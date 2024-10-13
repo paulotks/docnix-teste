@@ -1,17 +1,16 @@
 <div class="container-input">
-    <label for="username">{{ label() }}</label>
+    <label for="birthDate">{{ label() }}</label>
     <p-calendar 
         [showIcon]="true" 
-        inputId="buttondisplay" 
-        pInputText 
-        id="username" 
-        aria-describedby="username-help"
+        inputId="buttondisplay"
+        id="birthDate" 
+        aria-describedby="birthDate-help"
         [(ngModel)]="value"
         (focus)="onTouched && onTouched()"
-        (input)="onChange && onChange(value)"
+        (click)="onChange && onChange(value)"
         [disabled]="isDisabled"
     />
-    <small id="username-help">
+    <small id="birthDate-help">
         Enter your username to reset your password.
     </small>
 </div>
