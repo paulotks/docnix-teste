@@ -4,9 +4,9 @@
         pInputText 
         id="username" 
         aria-describedby="username-help"
-        [(ngModel)]="inputValue"
+        [(ngModel)]="value"
         (focus)="onTouched && onTouched()"
-        (input)="onChange && onChange(inputValue)"
+        (input)="onChange && onChange(value)"
         [disabled]="isDisabled"
     />
     <small id="username-help">

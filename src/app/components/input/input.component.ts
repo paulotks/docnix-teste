@@ -7,14 +7,15 @@ import { InputTextModule } from 'primeng/inputtext';
     standalone: true,
     imports: [InputTextModule, FormsModule],
     templateUrl: './input.component.html',
-    styleUrl: './input.component.scss'
+    styleUrl: './input.component.scss',
+    
 })
 export class InputComponent implements ControlValueAccessor {
     label = input.required();
-    inputValue = '';
-
+    
     //setup
     private ngControl = inject(NgControl, { optional: true});
+    protected value = '';
     protected onTouched?: () => {}
     protected onChange?: (value: string) => {}
     protected isDisabled: boolean = false
@@ -26,7 +27,7 @@ export class InputComponent implements ControlValueAccessor {
     }
 
     writeValue(obj: string): void {
-        this.inputValue = obj;
+        this.value = obj;
     }
     registerOnChange(fn: any): void {
         this.onChange = fn

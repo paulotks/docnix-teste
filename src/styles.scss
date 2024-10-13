@@ -1,22 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700;900&display=swap");
+@import 'variables.scss';
 
-:root {
-  --type-second: "Roboto", georgia;
-  --primary-color: #4b009d;
-  --secondary-color: #23292e;
-  --background-color: #ffffff;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: $type-second;
+  font-size: $font-size-medium;
+  background-color: $background-color;
 }
 
-// * {
-//   box-sizing: border-box;
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-//   font-family: "Poppins", sans-serif;
-// }
+* {
+  box-sizing: border-box;
+}
 
-// ul,
-// li {
-//   list-style: none;
-// }
+label, small {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul, li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+
+  &-center {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  html, body {
+    font-size: $font-size-small;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: $font-size-small;
+  }
+}
