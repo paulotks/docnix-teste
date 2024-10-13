@@ -2,6 +2,7 @@
 
 .container {
     max-width: $container-max-width;
+    min-width: $container-min-width;
     margin: 0 auto;
     padding: 1em;
   }

@@ -1,11 +1,11 @@
-<div class="container">
-    <form [formGroup]="personalForm" (ngSubmit)="savePersonalData()">
+<section class="container">
+    <form [formGroup]="personalForm" (ngSubmit)="navigateToNextStep()">
         <app-input label="Nome" formControlName="name"/>
         <app-input label="Sobrenome" formControlName="surname"/>
         <app-input label="CPF" formControlName="cpf"/>
         <app-input label="Data de nascimento" formControlName="birthDate"/>  <!-- criar componente novo de calendario -->
         <app-input label="Telefone" formControlName="phone"/>
         <app-input label="E-mail" formControlName="email"/>
-        <button (click)="printForm()">Printa o form</button>
+        <p-button (click)="navigateToNextStep()">Próximo</p-button>
     </form>
-</div>
+</section>

@@ -10,11 +10,13 @@ import {
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputComponent } from '../input/input.component';
+import { Router } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-personal',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, InputComponent, FloatLabelModule],
+  imports: [ReactiveFormsModule, InputTextModule, InputComponent, FloatLabelModule, ButtonModule],
   templateUrl: './personal.component.html',
   styleUrl: './personal.component.scss',
 })
@@ -23,7 +25,8 @@ export class PersonalComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private registrationService: CustomerRegistrationDataService
+    private registrationService: CustomerRegistrationDataService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -50,8 +53,10 @@ export class PersonalComponent implements OnInit {
     }
   }
 
-  printForm() {
-    console.log(this.personalForm);
+  navigateToNextStep() {
+    this.savePersonalData()
+    this.router.navigate(['/steps/seat'])
+
   }
 
 
