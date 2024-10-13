@@ -3,9 +3,11 @@
         <app-input label="Nome" formControlName="name"/>
         <app-input label="Sobrenome" formControlName="surname"/>
         <app-input label="CPF" formControlName="cpf"/>
-        <app-input label="Data de nascimento" formControlName="birthDate"/>  <!-- criar componente novo de calendario -->
+        <app-input-calender label="Data de nascimento" formControlName="birthDate"/>
         <app-input label="Telefone" formControlName="phone"/>
         <app-input label="E-mail" formControlName="email"/>
+
         <p-button (click)="navigateToNextStep()">Próximo</p-button>
+
     </form>
 </section>

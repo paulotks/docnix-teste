@@ -12,11 +12,12 @@ import { FloatLabelModule } from 'primeng/floatlabel';
 import { InputComponent } from '../input/input.component';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
+import { InputCalenderComponent } from '../input-calender/input-calender.component';
 
 @Component({
   selector: 'app-personal',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTextModule, InputComponent, FloatLabelModule, ButtonModule],
+  imports: [ReactiveFormsModule, InputTextModule, InputComponent, FloatLabelModule, ButtonModule, InputCalenderComponent],
   templateUrl: './personal.component.html',
   styleUrl: './personal.component.scss',
 })
@@ -55,7 +56,7 @@ export class PersonalComponent implements OnInit {
 
   navigateToNextStep() {
     this.savePersonalData()
-    this.router.navigate(['/steps/seat'])
+    this.router.navigate(['register/address'])
 
   }
 
