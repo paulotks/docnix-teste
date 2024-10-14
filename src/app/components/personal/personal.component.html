@@ -1,13 +1,12 @@
 <section class="container">
-    <form [formGroup]="personalForm" (ngSubmit)="navigateToNextStep()">
-        <app-input label="Nome" formControlName="name"/>
-        <app-input label="Sobrenome" formControlName="surname"/>
-        <app-input label="CPF" formControlName="cpf"/>
-        <app-input-calender label="Data de nascimento" formControlName="birthDate"/>
-        <app-input label="Telefone" formControlName="phone"/>
-        <app-input label="E-mail" formControlName="email"/>
+    <form [formGroup]="personalForm" (ngSubmit)="savePersonalData()">
+        <app-input label="Nome" id="name" placeHolder="Primeiro nome" formControlName="name"/>
+        <app-input label="Sobrenome" id="surname" placeHolder="Sobrenome" formControlName="surname"/>
+        <app-input label="CPF" id="cpf" placeHolder="Informe seu cpf" formControlName="cpf"/>
+        <app-input-calender label="Data de nascimento" id="birthDate" formControlName="birthDate"/>
+        <app-input label="Telefone" id="phone" placeHolder="Celular" formControlName="phone"/>
+        <app-input label="E-mail" id="email" placeHolder="mail@email.com" formControlName="email"/>
 
-        <p-button (click)="navigateToNextStep()">Próximo</p-button>
-
+        <p-button (click)="savePersonalData()">Próximo</p-button>
     </form>
 </section>

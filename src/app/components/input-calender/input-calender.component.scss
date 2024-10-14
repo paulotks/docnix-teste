@@ -1,9 +1,21 @@
 .container-input {
     display: flex;
     flex-direction: column;
+
+    &.has-error {
+        input {
+            border: 1px solid red;
+        }
+    }
     
 
     p-calendar, label, small {
         margin-top: 0.5em;
+    }
+
+    small {
+        color: red;
+        display: block;
+        margin-top: 0.5rem;
     }
 }

@@ -2,15 +2,15 @@
     <label for="birthDate">{{ label() }}</label>
     <p-calendar 
         [showIcon]="true" 
-        inputId="buttondisplay"
-        id="birthDate" 
+        inputId="birthDate" 
         aria-describedby="birthDate-help"
         [(ngModel)]="value"
         (focus)="onTouched && onTouched()"
         (click)="onChange && onChange(value)"
         [disabled]="isDisabled"
+        placeholder="dd/mm/aaaa"
     />
-    <small id="birthDate-help">
-        Enter your username to reset your password.
+    <small *ngIf="getErrorMessage()" id="help">
+        {{getErrorMessage()}}
     </small>
 </div>

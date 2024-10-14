@@ -1,15 +1,19 @@
-<div class="container-input">
-    <label for="username">{{ label() }}</label>
-    <input 
+<div class="container-input" [ngClass]="{'has-error': isControlInvalid()}">
+    <label [for]="id()">{{ label() }}</label>
+    <input
+        class=""
         pInputText 
-        id="username" 
-        aria-describedby="username-help"
+        [id]="id()" 
+        aria-describedby="help"
         [(ngModel)]="value"
         (focus)="onTouched && onTouched()"
         (input)="onChange && onChange(value)"
         [disabled]="isDisabled"
+        [placeholder]="placeHolder()"
     />
-    <small id="username-help">
-        Enter your username to reset your password.
-    </small>
+
+        <small *ngIf="getErrorMessage()" id="help">
+            {{getErrorMessage()}}
+        </small>
+
 </div>

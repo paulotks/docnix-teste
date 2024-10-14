@@ -32,7 +32,7 @@ export class PersonalComponent implements OnInit {
 
   ngOnInit() {
     this.personalForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(4)]],
       surname: ['', Validators.required],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
       birthDate: ['', Validators.required],
@@ -47,19 +47,13 @@ export class PersonalComponent implements OnInit {
   }
 
   savePersonalData() {
+    console.log(this.personalForm);
+    debugger;
     if (this.personalForm.valid) {
       const personalData: PersonalData = this.personalForm.value;
       this.registrationService.setPersonalData(personalData);
-      //chamar metodo que navega para proxima etapa
+      this.router.navigate(['register/address'])
     }
   }
-
-  navigateToNextStep() {
-    this.savePersonalData()
-    console.log(this.personalForm)
-    // this.router.navigate(['register/address'])
-
-  }
-
 
 }
