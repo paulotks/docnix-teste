@@ -1,0 +1,20 @@
+.credit-analysis {
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  
+    &.red {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+  
+    &.yellow {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+  
+    &.green {
+      background-color: #d4edda;
+      color: #155724;
+    }
+  }

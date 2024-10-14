@@ -65,5 +65,4 @@ export class CustomerRegistrationDataService {
     return this.registrationData;
   }
 
-  //falta injetar nos componentes
 }
