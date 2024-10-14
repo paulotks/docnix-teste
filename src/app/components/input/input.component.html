@@ -12,7 +12,7 @@
         [placeholder]="placeHolder()"
     />
 
-        <small *ngIf="getErrorMessage()" id="help">
+        <small *ngIf="isControlInvalid()" id="help">
             {{getErrorMessage()}}
         </small>
 

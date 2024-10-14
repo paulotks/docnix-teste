@@ -51,7 +51,7 @@ export class InputCalenderComponent implements ControlValueAccessor {
 
     getErrorMessage(): string {
         const control = this.ngControl?.control;
-        console.log(control?.dirty)
+        console.log(control?.errors)
         if (control) {
             if (control.errors?.['required'] && control.dirty) {
                 return 'Este campo é obrigatório.';
