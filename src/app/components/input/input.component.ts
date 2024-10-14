@@ -51,7 +51,6 @@ export class InputComponent implements ControlValueAccessor {
 
     getErrorMessage(): string {
         const control = this.ngControl?.control;
-        console.log(control?.errors)
         if (control) {
             if (control.invalid && control.errors?.['required'] && control.dirty) {
                 return 'Este campo é obrigatório.';
@@ -60,7 +59,13 @@ export class InputComponent implements ControlValueAccessor {
                 return 'Formato inválido.';
             }
             if (control.invalid && control.errors?.['minlength'] && control.dirty) {
-                return 'Formato invalido';
+                return 'Muito curto';
+            }
+            if (control.invalid && control.errors?.['email'] && control.dirty) {
+                return 'E-mail inválido';
+            }
+            if (control.invalid && control.errors?.['cpfInvalid'] && control.dirty) {
+                return 'Cpf inválido';
             }
         }
         return '';

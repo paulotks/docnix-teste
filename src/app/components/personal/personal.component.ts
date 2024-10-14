@@ -13,6 +13,7 @@ import { InputComponent } from '../input/input.component';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputCalenderComponent } from '../input-calender/input-calender.component';
+import { CustomValidatorsForms } from '../../shared/validators/customValidatorsForms';
 
 @Component({
   selector: 'app-personal',
@@ -27,17 +28,17 @@ export class PersonalComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private registrationService: CustomerRegistrationDataService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit() {
     this.personalForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(4)]],
-      surname: ['', Validators.required],
-      cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
-      birthDate: ['', Validators.required],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{10,11}$/)]] ,
-      email: ['', [Validators.required, Validators.email]],
+      name: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      surname: [null, [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      cpf: [null, [Validators.required, CustomValidatorsForms.validateCpf]],
+      birthDate: [null, Validators.required],
+      phone: [null, [Validators.required, Validators.pattern(/^\(\d{2}\) \d{4,5}-\d{4}$/)]] ,
+      email: [null, [Validators.required, Validators.email]],
     });
 
     const personalData = this.registrationService.getPersonalData();
