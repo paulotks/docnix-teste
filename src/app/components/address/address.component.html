@@ -1,1 +1,17 @@
-<p>addres works!</p>
+<section class="container">
+    <form [formGroup]="addressForm" (ngSubmit)="saveAddressData()">
+        <app-input label="CEP" id="cep" placeHolder="00000-000" formControlName="cep"/>
+        <app-input label="Rua" id="address" placeHolder="Nome da rua" formControlName="address"/>
+        <app-input label="Número" id="number" placeHolder="Número da casa" formControlName="number"/>
+        <app-input label="Bairro" id="district" placeHolder="Bairro" formControlName="district"/>
+        <app-input label="Cidade" id="phone" placeHolder="Cidade" formControlName="city"/>
+        <app-input label="Estado" id="state" placeHolder="Estado" formControlName="state"/>
+        <!-- <app-input-calender label="teste" id="teste"/> -->
+
+        <!-- corrigir essa merda depois -->
+         <div class="button-container">
+             <p-button (click)="returnStep()">Próximo</p-button> 
+             <p-button (click)="saveAddressData()">Próximo</p-button> 
+         </div>
+    </form>
+</section>

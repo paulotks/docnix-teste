@@ -48,8 +48,6 @@ export class PersonalComponent implements OnInit {
   }
 
   savePersonalData() {
-    console.log(this.personalForm);
-    debugger;
     if (this.personalForm.valid) {
       const personalData: PersonalData = this.personalForm.value;
       this.registrationService.setPersonalData(personalData);
