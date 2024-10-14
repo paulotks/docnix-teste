@@ -17,11 +17,10 @@ export interface AddressData {
 }
 
 export interface PaymentData {
-  method: string;
   cardNumber: string;
   nameOnCard: string;
   expiryDate: string;
-  cvc: string;
+  cvv: string;
 }
 
 export interface RegistrationData {

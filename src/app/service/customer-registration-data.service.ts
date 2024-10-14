@@ -30,11 +30,10 @@ export class CustomerRegistrationDataService {
       city: '',
     },
     payment: {
-      method: '',
       cardNumber: '',
       nameOnCard: '',
       expiryDate: '',
-      cvc: '',
+      cvv: '',
     },
   };
 
@@ -60,6 +59,10 @@ export class CustomerRegistrationDataService {
 
   getPaymentData(): PaymentData {
     return this.registrationData.payment;
+  }
+
+  getRegistrationData(): RegistrationData {
+    return this.registrationData;
   }
 
   //falta injetar nos componentes

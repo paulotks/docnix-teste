@@ -1,1 +1,14 @@
-<p>payment works!</p>
+<section class="container">
+    <form [formGroup]="paymentForm" (ngSubmit)="savePaymentData()">
+        <app-input label="Número do cartão" id="cardNumber" placeHolder="0000-0000-00000-0000" formControlName="cardNumber"/>
+        <app-input label="Nome no cartão" id="nameOnCard" placeHolder="Paulo" formControlName="nameOnCard"/>
+        <app-input label="Data de vencimento" id="expiryDate" placeHolder="mm/aaaa" formControlName="expiryDate"/>
+        <app-input label="cvv" id="cvv" placeHolder="000" formControlName="cvv"/>
+
+        <!-- melhorar depois -->
+         <div class="button-container">
+             <p-button (click)="returnStep()">Próximo</p-button> 
+             <p-button (click)="savePaymentData()">Próximo</p-button> 
+         </div>
+    </form>
+</section>

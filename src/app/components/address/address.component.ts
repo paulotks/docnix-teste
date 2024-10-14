@@ -1,6 +1,6 @@
 import { CustomerRegistrationDataService } from './../../service/customer-registration-data.service';
 import { Component, OnInit } from '@angular/core';
-import { PersonalData } from '../../models/customer-registration-data.model';
+import { AddressData, PersonalData } from '../../models/customer-registration-data.model';
 import {
   FormBuilder,
   FormGroup,
@@ -37,10 +37,10 @@ export class AddresComponent implements OnInit {
       number: [null, [Validators.required, Validators.maxLength(10)]],
       district: [null, Validators.required],
       city: [null, [Validators.required,]],
-      state: [null, [Validators.required,]] ,
+      state: [null, [Validators.required,]],
     });
 
-    const addressForm = this.registrationService.getPersonalData();
+    const addressForm = this.registrationService.getAddressData();
     if (addressForm) {
       this.addressForm.patchValue(addressForm);
     }
@@ -48,9 +48,9 @@ export class AddresComponent implements OnInit {
 
   saveAddressData() {
     if (this.addressForm.valid) {
-      const personalData: PersonalData = this.addressForm.value;
-      this.registrationService.setPersonalData(personalData);
-      this.router.navigate(['register/address']);
+      const addresslData: AddressData = this.addressForm.value;
+      this.registrationService.setAddressData(addresslData);
+      this.router.navigate(['register/payment']);
     }
   }
 
